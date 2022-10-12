@@ -5,9 +5,13 @@ export default function todoListReducer(state = {
   switch(action.type) {
 
     case 'ADD_TODO':
-      return Object.assign({}, {
-        todos: state.todos.concat(action.todo)
-      });
+      // return Object.assign({}, {
+      //   todos: state.todos.concat(action.todo)
+      // });
+    return {
+      ...state, todos: [...state.todos, action.todo]
+    }
+
 
     default:
       return state;
